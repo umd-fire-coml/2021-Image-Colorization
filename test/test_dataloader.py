@@ -1,5 +1,5 @@
 import pytest
-from dataloader import DataLoader
+from src.dataloader import DataLoader
 
 def test_dataloader():
     data_loader = DataLoader()
