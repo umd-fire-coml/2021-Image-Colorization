@@ -4,7 +4,7 @@ import os
 import cv2
 
 class DataLoader(Sequence):
-    def __init__(self, file_path, batch_size=8, x_shape=(256, 256, 3), y_shape=(10,)):
+    def __init__(self, file_path, batch_size=8, x_shape=(256, 256, 3), y_shape=(256, 256, 3)):
         self.batch_size = batch_size
         self.x_shape = x_shape
         self.y_shape = y_shape
