@@ -3,7 +3,7 @@ from tensorflow.keras.utils import Sequence
 import os
 import cv2
 
-class DataGenerator(Sequence):
+class DataLoader(Sequence):
     def __init__(self, file_path, batch_size=8, x_shape=(256, 256, 3), y_shape=(10,)):
         self.batch_size = batch_size
         self.x_shape = x_shape
