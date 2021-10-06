@@ -4,7 +4,7 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   RunAllTests:
-    runs-on: windows-latest
+    runs-on: linux-latest
     container: python
     steps:
       - uses: actions/checkout@v2
