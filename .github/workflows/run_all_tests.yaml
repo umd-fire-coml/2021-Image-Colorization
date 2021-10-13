@@ -5,13 +5,9 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   RunAllTests:
     runs-on: ubuntu-latest
-    container: python
+    container: python:3.9.7
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
-        with:
-          python-version: '3.9.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
       - name: run_all_tests
         run: |
           pip install -r requirements.txt
