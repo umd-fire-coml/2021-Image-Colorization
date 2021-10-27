@@ -5,21 +5,7 @@ on: [push, pull_request, workflow_dispatch]
 jobs:
   RunAllTests:
     runs-on: ubuntu-latest
-    container: pythonname: run_all_test
-
-on: [push, pull_request, workflow_dispatch]
-
-jobs:
-  RunAllTests:
-    runs-on: ubuntu-latest
     container: python:3.9.7
-    steps:
-      - uses: actions/checkout@v2
-      - name: run_all_tests
-        run: |
-          pip install -r requirements.txt
-          pip install -r test-requirements.txt
-          python -m pytest
     steps:
       - uses: actions/checkout@v2
       - name: run_all_tests
