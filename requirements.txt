@@ -1,1 +1,5 @@
-requests
+tensorflow
+numpy
+pandas
+matplotlib
+opencv-python-headless
