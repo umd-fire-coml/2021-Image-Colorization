@@ -28,6 +28,7 @@ share/python-wheels/
 MANIFEST
 fire-ml/
 Dataset/
+src/logs/
 
 
 # PyInstaller

@@ -8,7 +8,6 @@ import datetime
 import os
 import numpy as np
 import cv2
-from utils import showimgs
 
 import matplotlib.pyplot as plt
 
