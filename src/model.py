@@ -133,3 +133,4 @@ class ColorizationModel(Sequential):
         axarr[1][1].set_title("Cr Real")
         axarr[1][1].axis('off')
         plt.show()
+        plt.plt.savefig('visualizer.png')
