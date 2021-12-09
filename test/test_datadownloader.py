@@ -5,6 +5,7 @@ from src.datadownloader import *
 
 def test_downloader():
   url = 'http://ipv4.download.thinkbroadband.com/5MB.zip'
-  save_path = './data'
-  download_url(url, save_path)
+  save_path = '../Dataset'
+  dataset_name = 'test'
+  download_url(url, dataset_name, save_path)
   assert(len(os.listdir(save_path)))
