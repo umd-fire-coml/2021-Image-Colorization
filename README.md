@@ -28,14 +28,15 @@ https://github.com/umd-fire-coml/2021-Image-Colorization/blob/final-deliverable/
 
 ## Environment Setup
 If you are not using Google Colab, you will need to run the following:
-```bash
-setup.sh
+```
+bash setup.sh
 ```
 This will generate the environment and install all requirements for the program and tests.
 
 ## Dataset Download
 In order to download the datasets, you want to use the download_url() function like in src/main.ipynb:
-```download_url('http://data.csail.mit.edu/places/places365/test_256.tar', 'train')
+```
+download_url('http://data.csail.mit.edu/places/places365/test_256.tar', 'train')
 download_url('http://data.csail.mit.edu/places/places365/val_256.tar', 'val')
 ```
 This will download and unzip the places365 testing and validation datasets.
