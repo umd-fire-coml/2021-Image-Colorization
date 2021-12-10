@@ -45,4 +45,5 @@ Steps about training and testing the model are included in src/main.ipynb. You c
 
 ## Citations
 [1] R. Zhang, P. Isola, and A. A. Efros, “Richzhang/colorization: Automatic colorization using deep neural networks. 'Colorful image colorization.' in ECCV, 2016.,” Available: https://github.com/richzhang/colorization. [Accessed: 10-Dec-2021].
+
 [2] B. Zhou, A. Lapedriza, A. Khosla, A. Oliva, and A. Torralba, "Places: A 10 million Image Database for Scene Recognition. in IEEE Transactions on Pattern Analysis and Machine Intelligence, 2017.," Available: http://places2.csail.mit.edu/download.html. [Accessed: 10-Dec-2021].
