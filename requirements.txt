@@ -1,6 +1,7 @@
 tensorflow
+tensorflow_io
+tensorboard
 numpy
-pandas
-matplotlib
 opencv-python-headless
 requests
+matplotlib
