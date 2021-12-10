@@ -8,5 +8,5 @@ def test_downloader():
   save_path = './Dataset'
   dataset_name = 'test'
   download_url(url, dataset_name)
-  goal_dir = os.path.join(os.getcwd(), f"./{save_path}/{dataset_name}")
+  goal_dir = os.path.join(os.getcwd(), f"{save_path}/{dataset_name}")
   assert(os.path.exists(goal_dir))

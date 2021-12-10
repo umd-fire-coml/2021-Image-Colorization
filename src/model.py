@@ -87,13 +87,13 @@ class ColorizationModel(Sequential):
                 )
     
     # Test a given image with the model
-    def test_image(self, path):
+    def test_image(self, path, save_path):
         # Open the image
         rgb = tf.image.decode_jpeg(tf.io.read_file(path), 3)
         # Convert to YCbCr
         ycbcr = tfio.experimental.color.rgb_to_ycbcr(rgb)
         # Convert back to RGB for visualization
-        rgb_back = cv2.cvtColor(ycbcr.numpy(), cv2.COLOR_YCrCb2BGR)
+        bgr_back = cv2.cvtColor(ycbcr.numpy(), cv2.COLOR_YCrCb2BGR)
         # Normalize to [0,1]
         ycbcr_float32 = tf.cast(ycbcr, tf.float32) / 255.0
         # Shape the Y channel as a batch
@@ -105,16 +105,18 @@ class ColorizationModel(Sequential):
         # Multiply by 255 to get [0,255] YCbCr Image
         ycbcr_result = tf.cast(ycbcr_result_float32 * 255.0, tf.uint8)
         # Convert the YCbCr result to RGB
-        rgb_result = cv2.cvtColor(ycbcr_result.numpy(), cv2.COLOR_YCrCb2BGR)
+        bgr_result = cv2.cvtColor(ycbcr_result.numpy(), cv2.COLOR_YCrCb2BGR)
+        # Save the resulting image
+        cv2.imwrite(save_path, bgr_result)
         # Show the resulting image with grayscale and real images
         f, axarr = plt.subplots(1, 3, figsize=(21,21))
         axarr[0].imshow(ycbcr[:,:,0], cmap='gray')
         axarr[0].set_title("Grayscale")
         axarr[0].axis('off')
-        axarr[1].imshow(rgb_result)
+        axarr[1].imshow(bgr_result)
         axarr[1].set_title("Result")
         axarr[1].axis('off')
-        axarr[2].imshow(rgb_back)
+        axarr[2].imshow(bgr_back)
         axarr[2].set_title("Real")
         axarr[2].axis('off')
         plt.show()
