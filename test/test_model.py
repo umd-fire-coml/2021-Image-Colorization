@@ -1,14 +1,13 @@
 import pytest
-from tensorflow import keras
+from tensorflow.keras.models import Sequential
 from src.dataloader import DataLoader
-from src.model import Model
+from src.model import ColorizationModel
+import os
 
-
-@pytest.fixture
 def my_model():
-    training = DataLoader('./data')
-    validation = DataLoader('./data')
-    model = Model(training=training, validation=validation)
-    assert(isinstance(model.model, keras.Model))
-    assert(isinstance(model.training_loader, DataLoader))
-    assert(isinstance(model.validation_loader, DataLoader))
+    goal_dir = os.path.join(os.getcwd(), "test")
+    data_loader = DataLoader(goal_dir)
+    model = ColorizationModel(training=data_loader, validation=data_loader)
+    assert(isinstance(model, Sequential))
+    assert(isinstance(model.train_data, DataLoader))
+    assert(isinstance(model.val_data, DataLoader))
